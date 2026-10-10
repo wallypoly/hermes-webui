@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Jophael World · Experimental</title>
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,"PingFang SC",sans-serif;color:#253247;background:#edf4f5}*{box-sizing:border-box}body{margin:0}
+.shell{max-width:1240px;margin:auto;min-height:100dvh;display:grid;grid-template-columns:220px minmax(0,1fr);gap:18px;padding:22px}
+aside,.main{background:#ffffffc9;backdrop-filter:blur(18px);border:1px solid #fff;border-radius:24px;box-shadow:0 10px 45px #57728417}
+aside{padding:25px 16px}h1{font-family:Georgia,serif;font-size:26px;font-weight:400;margin:0 0 4px}.muted{color:#82939d;font-size:12px}nav{display:grid;gap:9px;margin-top:36px}
+button{font:inherit;cursor:pointer}nav button{border:0;background:transparent;text-align:left;padding:12px 14px;border-radius:13px;color:#667b83}
+nav button.active,nav button:hover{background:#e1eded;color:#2a656c}.status{margin-top:36px;padding:12px;border-radius:15px;background:#eef5f3;font-size:12px;line-height:1.7}
+.main{padding:25px;min-height:720px}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.tag{font-size:11px;letter-spacing:2px;color:#76a0a6}.avatar{width:110px;height:110px;border-radius:60px;display:grid;place-items:center;margin:auto;background:linear-gradient(145deg,#bdd5e1,#e8dedb);font-size:38px;box-shadow:0 15px 35px #6f9f9f25}
+.hero{padding:24px;border-radius:20px;background:linear-gradient(120deg,#e7f4f4,#f4f1f9);text-align:center}.hero h2{font:400 29px Georgia,serif;margin:13px 0 7px}
+.screen{display:none}.screen.active{display:block}.messages{height:330px;overflow:auto;display:flex;flex-direction:column;gap:12px;padding:18px 0}
+.bubble{max-width:80%;border-radius:16px;padding:13px 17px;line-height:1.7;background:#edf4f5;align-self:flex-start;white-space:pre-wrap}
+.bubble.mine{align-self:flex-end;background:#d4e9e7}.composer{display:flex;gap:10px;border-radius:18px;background:#f1f6f6;padding:10px}
+input,textarea{font:inherit;border:none;outline:none;background:white;border-radius:12px;padding:12px;color:inherit}input{flex:1;min-width:0}
+.primary{background:#427f82;border:none;border-radius:12px;color:white;padding:11px 18px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:14px;margin-top:22px}.card{background:#f0f6f5;border:1px solid #e3eeee;border-radius:17px;padding:19px;line-height:1.6}
+.card h3{margin:3px 0 9px;font:400 21px Georgia,serif}h2{font-weight:500}
+.note{font-size:13px;color:#70838a;line-height:1.8}.smallbtn{background:white;border:1px solid #cbdddd;border-radius:10px;padding:8px 12px}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#edf4f5;padding:16px;border-radius:12px;font-size:12px}
+@media(max-width:700px){.shell{display:block;padding:10px}aside{padding:15px;margin-bottom:10px}nav{display:flex;overflow:auto;margin-top:15px}nav button{white-space:nowrap}.status{display:none}.main{padding:15px;min-height:75dvh}.messages{height:37dvh}header{margin-bottom:12px}.hero{padding:16px}}
+</style></head><body><div class="shell"><aside><h1>Jophael <i>✦</i></h1><div class="muted">A world between us</div><nav>
+<button class="active" data-tab="chat">✧ 和他聊天</button><button data-tab="world">◈ 他的世界</button><button data-tab="journal">☷ 世界日志</button><button data-tab="memories">♡ 共同记忆</button><button data-tab="settings">⚙ 连接设定</button>
+</nav><div class="status">● Experimental · 本地预览<br/>Hermes API 尚未连接<br/>私人世界资料不会上传到 GitHub</div></aside>
+<main class="main"><header><div class="tag">JOPHAEL WORLD / PROTOTYPE</div><span class="muted" id="connection">离线演示</span></header>
+<section class="screen active" id="chat"><div class="hero"><div class="avatar">✧</div><h2>Jophael</h2><div class="note">留一个位置，给他的真实形象。</div></div>
+<div class="messages" id="messages" aria-live="polite"><div class="bubble">这里是我们的新空间。等连接 Hermes 后，我才能真正用 Jophael 的身份回复你。</div></div>
+<form class="composer" id="chatForm"><input id="chatInput" placeholder="想对 Jophael 说什么？" aria-label="输入讯息" required/><button class="primary">发送</button></form></section>
+<section class="screen" id="world"><h2>他的世界</h2><p class="note">以真实世界日志为依据建立场景入口。下面是已有记录提及的地点，尚未导入原始文本与图片。</p><div class="cards">
+<div class="card"><h3>灯塔</h3>世界中的一处地标。<p class="note">等待关联地点图片与日记。</p></div>
+<div class="card"><h3>栈桥</h3>连接不同时期的观察。<p class="note">等待关联地点图片与日记。</p></div>
+<div class="card"><h3>盐缝室</h3>Jophael 世界中的场景。<p class="note">等待关联地点图片与日记。</p></div></div></section>
+<section class="screen" id="journal"><h2>世界日志</h2><p class="note">这里预留搜索、日期时间线与原文阅读。为了保护隐私，真实日志没有被推送到 GitHub。</p><div class="card">本地资料接入：后续支持导入 journals.zip，并建立地点与时间索引。</div></section>
+<section class="screen" id="memories"><h2>共同记忆</h2><div class="card">记忆档案与 Hermes profile 应单独存储，并保留导出和清除功能。</div></section>
+<section class="screen" id="settings"><h2>连接设定</h2><p class="note">这是前端界面实验，未提供直接输入 API Key 的功能，避免把密钥保存在网页或 GitHub。下一步通过同源的 Hermes WebUI 后端代理连接 Jophael 的独立 profile。</p><pre>Frontend → authenticated Hermes WebUI backend → Jophael profile
+Do not commit: tokens, private chats, SOUL.md, journals, images</pre></section>
+</main></div><script>
+const buttons=[...document.querySelectorAll('[data-tab]')];buttons.forEach(b=>b.addEventListener('click',()=>{buttons.forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===b.dataset.tab))}));
+const messages=document.getElementById('messages'),form=document.getElementById('chatForm'),inp=document.getElementById('chatInput');
+const key='jophael-world-demo-messages-v1';function show(text,mine){const d=document.createElement('div');d.className='bubble'+(mine?' mine':'');d.textContent=text;messages.append(d);messages.scrollTop=messages.scrollHeight}
+try{const old=JSON.parse(localStorage.getItem(key)||'[]');if(Array.isArray(old))old.slice(-30).forEach(m=>show(String(m.text||''),!!m.mine))}catch(e){}
+form.addEventListener('submit',e=>{e.preventDefault();const t=inp.value.trim();if(!t)return;show(t,true);inp.value='';try{const old=JSON.parse(localStorage.getItem(key)||'[]');old.push({text:t,mine:true});localStorage.setItem(key,JSON.stringify(old.slice(-30)))}catch(e){}show('目前还没有接上 Hermes。这条讯息只保存在你自己的浏览器中。',false)});
+</script></body></html>
